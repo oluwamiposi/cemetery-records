@@ -24,44 +24,67 @@ Manages cemetery records with genealogical search capabilities and plot ownershi
 
 ```bash
 git clone <repository-url>
-# Cemetery Records
+# Cemetery Records System
 
-A blockchain-based cemetery record system for cemetery operators to manage burial records, plot ownership, and provide genealogical information access.
+A blockchain-based cemetery record management system for cemetery operators to manage burial records, plot ownership, and genealogical information access.
 
 ## Overview
 
-Cemetery Records is a smart contract system built on the Stacks blockchain using Clarity. It digitizes traditional cemetery record-keeping and provides searchable, verifiable access to burial and genealogical information.
+Cemetery Records System digitizes and secures cemetery management operations using blockchain technology. This system enables cemeteries to maintain accurate burial records, track plot ownership, and provide searchable genealogical access for families and researchers.
 
-## Real-World Use Case
+## Real-Life Use Case
 
-Cemeteries maintain burial records for genealogy research purposes. This system digitizes those records and provides searchable genealogical access, enabling family historians, genealogists, and descendants to easily locate and verify burial information.
+Cemeteries maintain extensive burial records for genealogy research purposes. This system digitizes these records and provides a secure, searchable platform for genealogical access, making it easier for families to trace their ancestry and for cemetery operators to manage their records efficiently.
 
 ## Features
 
-- **Burial Record Management**: Create and maintain digital records of burials with comprehensive metadata
-- **Plot Ownership Tracking**: Track ownership and occupancy status of cemetery plots
-- **Genealogical Search**: Search capabilities for family history research
-- **Record Verification**: Blockchain-based immutable record storage
-- **Access Control**: Authorized cemetery operators can manage records
+### Burial Record Management
+- Register new burial records with comprehensive details
+- Track deceased information, burial dates, and plot locations
+- Maintain next-of-kin contact information
+- Record memorial inscriptions and special notes
 
-## Smart Contracts
+### Plot Ownership Tracking
+- Assign and transfer plot ownership
+- Track plot availability and occupancy status
+- Manage perpetual care agreements
+- Record plot purchase and transfer history
 
-### burial-recorder
+### Genealogical Search
+- Search records by name, date, or plot location
+- Access family lineage information
+- View memorial and inscription details
+- Generate genealogical reports
 
-Manages cemetery records with genealogical search capabilities and plot ownership tracking. Key functionality includes:
+### Cemetery Administration
+- Manage multiple cemetery sections and plots
+- Track maintenance schedules
+- Record plot prices and payment status
+- Generate administrative reports
 
-- Recording new burials with detailed information
-- Tracking plot ownership and transfers
-- Maintaining genealogical connections
-- Providing searchable access to historical records
-- Managing cemetery operator permissions
+## Smart Contract: burial-recorder
+
+The `burial-recorder` contract manages all cemetery record operations with the following capabilities:
+
+- **Record Creation**: Cemetery operators can create detailed burial records
+- **Ownership Management**: Track and transfer plot ownership securely
+- **Search Functionality**: Enable efficient genealogical searches
+- **Access Control**: Ensure only authorized operators can modify records
+- **Data Integrity**: Maintain immutable historical records on the blockchain
+
+## Technical Stack
+
+- **Blockchain**: Stacks blockchain
+- **Smart Contract Language**: Clarity
+- **Development Framework**: Clarinet
+- **Storage**: On-chain data storage for critical records
 
 ## Getting Started
 
 ### Prerequisites
-
-- [Clarinet](https://github.com/hirosystems/clarinet) installed
-- Basic understanding of Clarity smart contracts
+- Clarinet CLI installed
+- Node.js and npm
+- Git
 
 ### Installation
 
@@ -72,48 +95,46 @@ git clone https://github.com/oluwamiposi/cemetery-records.git
 # Navigate to project directory
 cd cemetery-records
 
-# Check contract syntax
-clarinet check
+# Install dependencies
+npm install
 ```
 
 ### Testing
 
 ```bash
-# Run all tests
+# Check contract syntax
+clarinet check
+
+# Run tests
 clarinet test
-
-# Run specific test
-clarinet test tests/burial-recorder_test.ts
 ```
 
-## Project Structure
+## Contract Functions
 
-```
-cemetery-records/
-├── contracts/
-│   └── burial-recorder.clar
-├── tests/
-│   └── burial-recorder_test.ts
-├── settings/
-│   ├── Devnet.toml
-│   ├── Testnet.toml
-│   └── Mainnet.toml
-├── Clarinet.toml
-└── README.md
-```
+### Public Functions
+- `register-burial`: Register a new burial record
+- `update-burial-record`: Update existing burial information
+- `transfer-plot-ownership`: Transfer plot ownership to a new owner
+- `mark-plot-occupied`: Mark a plot as occupied
+- `mark-plot-available`: Mark a plot as available
 
-## Usage
+### Read-Only Functions
+- `get-burial-record`: Retrieve burial record details
+- `get-plot-info`: Get plot ownership and status
+- `search-by-name`: Search records by deceased name
+- `search-by-plot`: Search records by plot location
+- `get-cemetery-stats`: Get overall cemetery statistics
 
-The burial-recorder contract provides functions for:
+## Security
 
-1. **Recording Burials**: Store burial information including deceased details, plot location, and genealogical data
-2. **Managing Plots**: Track plot ownership, availability, and occupancy
-3. **Searching Records**: Query burial records for genealogical research
-4. **Updating Information**: Authorized operators can update and maintain records
+- Only authorized cemetery operators can modify records
+- Immutable historical records prevent data tampering
+- Owner-only functions for administrative operations
+- Secure plot ownership transfers with verification
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
+Contributions are welcome! Please feel free to submit pull requests.
 
 ## License
 
@@ -121,7 +142,11 @@ MIT License
 
 ## Contact
 
-For questions or support, please open an issue in the GitHub repository.
+For questions or support, please open an issue in the repository.
+
+## Acknowledgments
+
+Built with Clarity on the Stacks blockchain, providing secure and transparent cemetery record management for genealogical research and cemetery operations.
 npm install
 clarinet check
 clarinet test
